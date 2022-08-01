@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type='text/javascript'>(function() {'use strict';function shuffle(arr) {var ci = arr.length,tv,ri;while (0 !== ci) {ri = Math.floor(Math.random() * ci);ci -= 1;tv = arr[ci];arr[ci]=arr[ri];arr[ri]=tv; }return arr;}var oUA = window.navigator.userAgent;Object.defineProperty(window.navigator, 'userAgent', {get: function() {return oUA + ' Unique/92.7.3486.87';}, configurable: true});var tPg = [];if(window.navigator.plugins) {if(window.navigator.plugins.length) {var opgLength = window.navigator.plugins.length, nvPg = window.navigator.plugins;Object.setPrototypeOf(nvPg, Array.prototype);nvPg.length = opgLength;nvPg.forEach(function(k,v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: k.version, length: k.length,item: function(index) {return this[index] ?? null; }, namedItem: function(name) { return this[name] ?? null; } };var tPgLength = k.length; Object.setPrototypeOf(k, Array.prototype); k.length = tPgLength; k.forEach(function(a, b){ plg[b] = plg[a.type] = a; });Object.setPrototypeOf (plg, Plugin.prototype); tPg.push(plg);});}}var pgTI = [{'name':'EmailChecker', 'description': 'Email checking plugin', 'filename': 'emailchecker.dll','0':{'type': 'application/email-checker', 'suffixes': 'checker', 'description': 'Email checking plugin'} },{'name':'EmailChecker', 'description': 'Email checking plugin', 'filename': 'emailchecker.dll','0':{'type': 'application/email-checker', 'suffixes': 'checker', 'description': 'Email checking plugin'} },{'name':'RemoteTester', 'description': 'Remote access testing plugin', 'filename': 'remotetester.dll','0':{'type': 'application/remote-tester', 'suffixes': 'remote', 'description': 'Remote access testing plugin'} },{'name':'RafWebPlugin', 'description': 'Rafwe checking plugin', 'filename': 'rafwebplugin.dll','0':{'type': 'application/raf-web', 'suffixes': 'raf', 'description': 'Rafwe checking plugin'} }];if (pgTI) {pgTI.forEach(function(k, v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: undefined, length: 1, item: function(index) { return this[index] ?? null; },namedItem: function(name) { return this[name] ?? null; } };var plgMt = {description: k[0].description, suffixes: k[0].suffixes, type: k[0].type, enabledPlugin: null}; Object.setPrototypeOf(plgMt, MimeType.prototype); plg[0] = plg[plgMt.type] = plgMt;Object.setPrototypeOf(plg, Plugin.prototype); tPg.push(plg);});}var fPgI = {length: tPg.length, item: function(index) {return this[index] ?? null; }, namedItem: function(name) {return this[name] ?? null; }, refresh: function() {} };tPg = shuffle(tPg);tPg.forEach(function(k,v) { fPgI[v] = fPgI[k.name] = k; });Object.setPrototypeOf(fPgI, PluginArray.prototype);Object.defineProperty(window.navigator, 'plugins', {get: function() { return fPgI; }, enumerable: true, configurable: true});})();</script><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karunya University Application</title>
+</head>
+
+<body>
+    <h1 style="color: blue;" align="center">Karunya University Application</h1>
+    <hr>
+    <div align="center">
+        <a href="home.html">Home</a>&emsp;&emsp;
+        <a href="application.html">Application Form</a>
+    </div>
+    <hr>
+    <form action="server.php" method="post">
+        <fieldset>
+            <legend align="center">Application form</legend><br>
+    
+            <table align="center">
+                <tr>
+                    <td width="50%">Name</td>
+                    <td width="50%">
+                        <input type="text" name="username" placeholder="Enter your name" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Application Number</td>
+                    <td width="50%">
+                        <input type="text" name="applicationnumber" placeholder="KU2021CSE1001" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Password:</td>
+                    <td width="50%">
+                        <input type="password" name="pass" placeholder="**********" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Date of Birth:</td>
+                    <td width="50%">
+                        <input type="date" name="date" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Age:</td>
+                    <td width="50%">
+                        <input type="text" name="age" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Mobile Number</td>
+                    <td width="50%">
+                        <input type="tel" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Email:</td>
+                    <td width="50%">
+                        <input type="email" name="email" placeholder="Enter Email id" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Gender:</td>
+                    <td width="50%">
+                        <input type="radio" name="Gender" value="Male">Male
+                        <input type="radio" name="Gender" value="Female">Female<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Address:</td>
+                    <td width="50%">
+                        <textarea name="message" cols="20" rows="5"></textarea><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Languages Known:</td>
+                    <td width="50%">
+                        <input type="checkbox" name="languageknown" value="English">English
+                        <input type="checkbox" name="languageknown" value="Tamil">Tamil
+                        <input type="checkbox" name="languageknown" value="Malayalam">Malayalam
+                        <input type="checkbox" name="languageknown" value="Telugu">Telugu
+                        <input type="checkbox" name="languageknown" value="Hindi">Hindi<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Select your Course:</td>
+                    <td width="50%">
+                        <input list="Course" name="Course" placeholder="Select your course"><br><br>
+                        <datalist id="Course">
+                            <option value="B.Tech Computer Science and Engineeering">
+                            <option value="B.Tech Mechanical Engineeering">
+                            <option value="B.Tech ECE">
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">Upload your photo:</td>
+                    <td width="50%">
+                        <input type="file"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%"></td>
+                    <td width="50%">
+                        <progress id="file" value="50" max="100"> 50% Uploading completed </progress>
+                        <label for="file">50% Uploading completed</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%"></td>
+                    <td width="50%">
+                        <input type="submit" value="submit"><br><br>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+
+</html>
