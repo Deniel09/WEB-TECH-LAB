@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Car</title>
+    <script src="app.js"></script>
+    <style>
+        .outerdiv{
+            width: 1413px;
+            height: 200px;
+            border-right: 16px solid blue;
+            margin-top: 30px;
+        }
+        #danger{
+            font-size: 22px;
+            width: 120px;
+            height: 55px;
+            background-color: red;
+            color: white;
+            position: absolute;
+            right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+        }
+        .btn{
+            width: 100%;
+            height: 100px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .startbtn{
+            font-size: 20px;
+            width: 160px;
+            height: 40px;
+            color: white;
+            background-color: blue;
+            margin: 25px;
+            border: 2px solid blue;
+        }
+        .stopingbtn{
+            font-size: 20px;
+            width: 160px;
+            height: 40px;
+            background-color: #efefef;
+            margin: 25px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div class="outerdiv">
+        <div id="car" style="width: 290px;">
+            <img src="https://media.istockphoto.com/photos/generic-red-suv-on-a-white-background-side-view-picture-id1157655660?k=20&m=1157655660&s=612x612&w=0&h=WOtAthbmJ9iG1zbKo4kNUsAGMe6-xM-E7a8TMxb5xmk=" alt="car image" style="width: 288px; height: 126px; top: 10px;">
+        </div>
+        <div id="danger">Danger</div>
+    </div>
+    <br><br>
+    <div class="btn">
+        <button onclick="move()" class="startbtn">Start</button>
+        <button onclick="stop()" class="stopingbtn">Stop</button>
+        <button onclick="reset()" class="stopingbtn">Reset</button>
+    </div>
+</body>
+</html>
