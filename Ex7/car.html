@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $(document).keydown(function(event){
+                    if (parseInt($('#car').css('left')) >= 1320){
+                        $('#car1result').html("Car 1<br><br>Winner").css("color", "green");
+                        $('#car2result').html("Car 2<br><br>Loser").css("color", "red");
+                    }
+                    else if(parseInt($('#car2').css('left')) >= 1320){
+                        $('#car1result').html("Car 1<br><br>Loser").css("color", "red");
+                        $('#car2result').html("Car 2<br><br>Winner").css("color", "green");
+                    }
+                    var car = $('#car');
+                    var car2 = $('#car2');
+                    var key = event.which;
+                    switch(key){
+                        case 37:  //left
+                                  car.animate({left:'-=5px'},1);
+                                  break;
+                        case 39:  //right
+                                  car.animate({left:'+=5px'},1);
+                                  break;
+                        case 65:  //left
+                                  car2.animate({left:'-=5px'},1);
+                                  break;
+                        case 68:  //right
+                                  car2.animate({left:'+=5px'},1);
+                                  break;
+                    }
+                })
+            });
+            $('#btn2').click(function(){
+                $('#car').css('left','10px');
+                $('#car2').css('left','10px');
+                $('#car1result').html("Car 1<br><br><br>");
+                $('#car2result').html("Car 2<br><br><br>");
+            });
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: #424242;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        .btn{
+            text-align: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            font-size: 15px;
+            margin: 10px;
+            background-color: black;
+            color: white;
+        }
+        .track{
+            margin: 80px 0;
+        }
+        .score{
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            background-color: #333333;
+            /* padding: 20px 0; */
+        }
+        .carresults{
+            padding: 20px;
+            font-size: 24px;
+        }
+        #car1result{
+            display: inline-block;
+            margin-right: 50%;
+        }
+        #car2result{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAR RACE</h1>
+    <div class="btn">
+        <button id="btn1">Race!</button>
+        <button id="btn2">Reset</button>
+    </div>
+    <div class="track">
+        <img src="racetrack.png" alt="racetrack" style="width: 100%; height: 200px;">
+    </div>
+
+     <div id="car" style="position: absolute;left:10px;top:215px;width:80px;height:30">
+        <img src="limbo.png" width="195" height="80">
+     </div>
+     <div id="car2" style="position: absolute;left:10px;top:320px;width:80px;height:30">
+        <img src="limbo2.png" width="195" height="80">
+     </div>
+     <div class="score">
+        <p style="border-bottom: 2px solid #5d5d5d; padding: 20px;">RESULTS</p>
+        <div class="carresults">
+            <p id="car1result">Car 1<br><br><br></p>
+            <p id="car2result">Car 2<br><br><br></p>
+        </div>
+     </div>
+</body>
+</html>
