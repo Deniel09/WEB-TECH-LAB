@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+    var app = angular.module("myapp",[]);
+    app.controller("mycon",function($scope){
+        $scope.myfun = function() {
+            var w = $scope.weight;
+            var h = $scope.height;
+            h = h/100;
+            
+            var bmi = w / (h * h);
+            $scope.bmi=bmi.toFixed(2);
+            if(bmi < 18.5){
+                $scope.output = "under weight";
+            }
+            else if(bmi >18.5 && bmi < 22.5){
+                $scope.output = "normal";
+            }
+            else if(bmi > 22.5 && bmi < 30){
+                $scope.output = "overweight";
+            }
+            else{
+                $scope.output = "obese";
+            }
+        }
+
+    });
+</script>
+    <style>
+        * {
+            margin: 0%;
+        }
+
+        .bmi_val {
+            width: 50%;
+            display: inline;
+            background-size: cover;
+        }
+
+        #t1{
+            padding: 8px;
+            inline-size: 80%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #t2{
+            padding: 8px;
+            inline-size: 80%;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        #bmi {
+            width: 50%;
+            display: inline;
+            background-size: cover;
+            color: #00ACC1; 
+            font-size: 50px;
+            /* margin-left: 30px; */
+        }
+        #n{
+            font-size: 15px;
+        }
+        .l{
+            width: 40%;
+            float:left;
+            height: 200px;
+            padding-left: 20px;
+            padding-top: 20px;
+            background-size: cover;
+            border: 1px solid rgb(214, 206, 206);
+            border-right: none;
+            border-top: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .r{
+            width: 50%;
+            height: 200px;
+            float: left;
+            text-align: center;
+            padding-top: 20px;
+            padding-right: 10px;
+            border: 1px solid rgb(214, 206, 206);
+            background-size: cover;
+            border-left: none;
+            border-top: none;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .m{
+            margin-top: 10%;
+            margin-left: 20%;
+            margin-right: 40%;
+            background-size: cover;
+        }
+        .top{
+            background-color: #00ACC1;
+            padding: 10px;
+            color: white;
+            border: 1px solid rgb(214, 206, 206);
+            margin-right: 29px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+    </style>
+    <title>bmi_index</title>
+</head>
+
+<body ng-app="myapp" ng-controller="mycon">
+    <div class = 'm'>
+        <div class = 'top'>
+            <h3>Body mass index (BMI)</h3>
+            A measure of body fat in adults
+        </div>
+        <div class="bmi_val">
+            <div class = 'l'>
+                Weight <br>
+                <input type="text" id='t1' ng-model="weight" name = 'weight' ng-keyup = "myfun()">kg
+                <br><br>
+                Height <br>
+                <input type="text" id='t2' ng-model="height" name = 'height' ng-keyup = "myfun()">cm
+            </div>
+            <div class ='r'>
+                <div id='bmi'>{{bmi}}</div>    
+                <div id = 'n'>{{output}}</div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
